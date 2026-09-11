@@ -20,7 +20,7 @@ permissions:
   contents: read
 concurrency:
   group: vpnkerla-pilot-${{ github.event.pull_request.number || github.ref }}-${{ inputs.platform || 'android' }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   build:
     runs-on: ${{ fromJSON('{"android":"ubuntu-24.04","windows":"windows-2022","linux":"ubuntu-24.04","macos":"macos-15"}')[inputs.platform || 'android'] }}
