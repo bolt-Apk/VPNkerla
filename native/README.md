@@ -1,13 +1,22 @@
-# VPNkerla — native application alpha
+# VPNkerla — native application pilot
 
-This is source code, not a released or certified installer. The commercial API
-is a separate service in `../infra/commercial`; the existing Sites login and
-pilot agent are not replaced automatically.
+The source handoff was merged into the main branch through [PR #1](https://github.com/bolt-Apk/VPNkerla/pull/1).
+Android [run #5](https://github.com/bolt-Apk/VPNkerla/actions/runs/34558831066)
+passed all six client tests and produced the corrected ARM64 APK. The downloaded
+APK passed SHA-256, signature, package name, VPNkerla label and native library
+verification. [BUILD-STATUS.json](BUILD-STATUS.json) records the exact source
+commit and artifact receipt. Real-device VPN behavior remains untested.
+
+The Android pilot connects with an existing personal key. Its account API,
+registration and payments are not configured. The separate commercial service
+source belongs to the earlier product bundle; this repository handoff contains
+the native client. The current website and VPN service are separate deployments.
 
 ## Implemented source
 
-- Native Flutter home with email-code registration/login, server-owned tariffs,
-  YooKassa checkout in the browser, payment verification and three device slots.
+- Source for email-code registration/login, server-owned tariffs, YooKassa
+  checkout, payment verification and three device slots; these account features
+  require the separate API and are unavailable in the existing-key pilot.
 - VPN button uses the existing FlClash native lifecycle and TUN integration.
 - Server-generated Mihomo configuration: VLESS REALITY, VLESS XHTTP, Hysteria 2,
   fallback group without a DIRECT fallback.
@@ -20,22 +29,38 @@ pilot agent are not replaced automatically.
 
 ## Reproduce source
 
-Run `python3 native/materialize.py /absolute/new/client-directory` from this
-product bundle. The script verifies pinned upstream and core revisions, applies
-the maintained patch and copies the custom interface. Git and network access
-to GitHub are required. Never build an unverified substitute core binary.
+From the repository root, run:
+
+```sh
+python3 native/materialize.py /absolute/new/client-directory
+```
+
+`native/upstream.json` pins the upstream client, core and dependency lock;
+`native/upstream.patch` contains maintained upstream changes; `native/overlay/`
+contains the custom interface, tests and pilot build script. The materializer
+checks the pinned revisions and lock, applies the patch and copies the overlay
+into a new directory. Git and network access to GitHub are required.
+
+The previously uploaded ZIP is an older project snapshot. Reproduce the current
+client from the current main branch, including the root workflow and `native/`.
 
 Use Flutter 3.47.1, Go 1.26.4 and Rust 1.95.0 with the pinned dependency lock.
-The core also requires platform toolchains; Android needs SDK/NDK, Windows a Windows build
-host, macOS a Mac. `dart run setup.dart --help` describes packaging targets.
+The core also requires platform toolchains. Android uses SDK 36 and NDK
+28.2.13676358; the workflows explicitly select that NDK for Flutter's native
+hooks. Windows needs a Windows build host, and macOS a Mac.
+`dart run setup.dart --help` describes packaging targets.
 
 In the reconstructed client:
 
 ```sh
-CI=true TAR_OPTIONS=--no-same-owner flutter --suppress-analytics pub get
-dart run intl_utils:generate
-flutter analyze
+python tool/kerla_build.py --platform android
 ```
+
+This checks the client and builds a debug-signed APK for Android ARM64. The
+script temporarily disables native hooks during localization and tests, restores
+both hooks, then builds with `--split-per-abi --target-platform android-arm64`.
+It copies `app-arm64-v8a-debug.apk` to `kerla-dist/VPNkerla-android-pilot.apk`
+and writes a SHA-256 checksum and build status.
 
 For a release build supply a verified HTTPS commercial API origin through
 `KERLA_API_URL` in the setup script's `env.json` file (no merchant secrets in
@@ -45,10 +70,11 @@ keys; do not distribute an unsigned/debug build as a finished release.
 
 ## Release gates still outstanding
 
-Compile and test installers on each OS; exercise real TUN routing, reconnect,
-suspend/resume, DNS and
-IPv6 behavior; test an actual YooKassa sandbox payment and webhook; configure
-mail delivery and commercial API HTTPS; verify device revoke/expiry on the VPS.
+Install the verified pilot recorded in `BUILD-STATUS.json` and exercise real TUN routing, reconnect, suspend/resume, DNS and IPv6 behavior on
+physical Android devices. Windows, macOS and Linux installers have not been
+built. Before enabling account features, test a YooKassa sandbox payment and
+webhook, configure mail delivery and commercial API HTTPS, and verify device
+revoke/expiry on the VPS.
 No 5,000-user load test has been performed. Automatic protocol selection does
 not guarantee access during filtering or a complete mobile data shutdown.
 
@@ -83,14 +109,11 @@ SHA-256 checksums go to `kerla-dist/`. macOS, Windows and Linux must be built on
 the corresponding host. OS-level VPN permission and routing still need a real
 device test. Apple iOS remains a separate implementation.
 
-No GitHub Actions build has been launched: no existing VPNkerla repository was
-found among the connected GitHub installations. The source can be uploaded to
-a new repository and its manual workflow run when that access is available.
-
 ## Build from the product repository
 
 The root `.github/workflows/native-pilot.yml` reconstructs the pinned client from
 `native/materialize.py` before building. Use this workflow when the GitHub repo
 contains the product tree with `native/`, rather than the reconstructed Flutter
 client itself. It runs an Android build for pull requests and supports manual platform builds. It keeps payments disabled when the API input
-is empty. No GitHub execution has been performed yet. See `GITHUB-BUILD-RU.md`.
+is empty. Current CI history is linked above; artifact verification is recorded
+in `BUILD-STATUS.json`. See `GITHUB-BUILD-RU.md`.

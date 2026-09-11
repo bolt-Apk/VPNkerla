@@ -1,31 +1,45 @@
 {
   "product": "VPNkerla",
   "date": "2026-09-11",
-  "channel": "source-alpha",
+  "channel": "android-pilot",
+  "sourceCommit": "4b7ff16ecd576d4ab8fa7d336d32e7dd87a5d983",
+  "githubWorkflow": ".github/workflows/native-pilot.yml",
+  "githubBuildRun": 34558831066,
+  "githubBuildUrl": "https://github.com/bolt-Apk/VPNkerla/actions/runs/34558831066",
+  "githubArtifactId": 10183792568,
   "flutter": "3.47.1",
   "go": "1.26.4",
   "rust": "1.95.0",
-  "jdk": "Temurin 17.0.20.1",
+  "ndk": "28.2.13676358",
   "clientTestsPassed": 6,
   "flutterAnalysisErrors": 0,
-  "androidNativeLibrariesBuilt": [
+  "flutterAnalysisWarnings": 0,
+  "flutterAnalysisInfos": 1,
+  "apkCreated": true,
+  "apkFile": "VPNkerla-android-pilot.apk",
+  "apkBytes": 124872869,
+  "apkSha256": "42190e00c649198af1cad23435dabf30c8e2894f5796654a8ed1c82af961ba0c",
+  "package": "ru.kerlavpn.client.dev",
+  "appLabel": "VPNkerla",
+  "versionName": "0.8.97",
+  "versionCode": 2026093001,
+  "minSdk": 24,
+  "targetSdk": 36,
+  "abis": [
+    "arm64-v8a"
+  ],
+  "androidNativeLibrariesVerified": [
     "libclash.so",
     "librust_api.so"
   ],
   "androidNativeElfMachine": 183,
-  "apkCreated": false,
+  "signatureVerified": true,
+  "signing": "debug",
+  "storeSigned": false,
   "deviceVpnTested": false,
+  "apiConfigured": false,
   "paymentsEnabled": false,
-  "blockedTask": ":app_links:compileDebugJavaWithJavac",
-  "block": "Network policy blocked access to repo.maven.apache.org. Offline build stopped with six missing module versions.",
-  "offlineMissingModules": [
-    "androidx.annotation:annotation-experimental:1.4.0",
-    "androidx.annotation:annotation-jvm:1.8.1",
-    "androidx.core:core-ktx:1.2.0",
-    "androidx.lifecycle:lifecycle-livedata:2.7.0",
-    "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20",
-    "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-  ],
-  "githubWorkflow": ".github/workflows/native-pilot.yml",
-  "githubBuildRun": false
+  "desktopInstallersCreated": false,
+  "iosImplemented": false,
+  "loadTest5000Completed": false
 }
