@@ -1,0 +1,31 @@
+{
+  "product": "VPNkerla",
+  "date": "2026-09-11",
+  "channel": "source-alpha",
+  "flutter": "3.47.1",
+  "go": "1.26.4",
+  "rust": "1.95.0",
+  "jdk": "Temurin 17.0.20.1",
+  "clientTestsPassed": 6,
+  "flutterAnalysisErrors": 0,
+  "androidNativeLibrariesBuilt": [
+    "libclash.so",
+    "librust_api.so"
+  ],
+  "androidNativeElfMachine": 183,
+  "apkCreated": false,
+  "deviceVpnTested": false,
+  "paymentsEnabled": false,
+  "blockedTask": ":app_links:compileDebugJavaWithJavac",
+  "block": "Network policy blocked access to repo.maven.apache.org. Offline build stopped with six missing module versions.",
+  "offlineMissingModules": [
+    "androidx.annotation:annotation-experimental:1.4.0",
+    "androidx.annotation:annotation-jvm:1.8.1",
+    "androidx.core:core-ktx:1.2.0",
+    "androidx.lifecycle:lifecycle-livedata:2.7.0",
+    "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20",
+    "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+  ],
+  "githubWorkflow": ".github/workflows/native-pilot.yml",
+  "githubBuildRun": false
+}

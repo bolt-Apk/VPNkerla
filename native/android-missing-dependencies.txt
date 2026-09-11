@@ -1,0 +1,6 @@
+androidx.annotation:annotation-experimental:1.4.0
+androidx.annotation:annotation-jvm:1.8.1
+androidx.core:core-ktx:1.2.0
+androidx.lifecycle:lifecycle-livedata:2.7.0
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20
+org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1
