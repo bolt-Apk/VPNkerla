@@ -49,8 +49,8 @@ if args.check_only:
 
 flags = ['--dart-define=KERLA_API_URL=' + args.api_url]
 if args.platform == 'android':
-    run('flutter', 'build', 'apk', '--debug', '--target-platform', 'android-arm64', *flags)
-    source = root / 'build/app/outputs/flutter-apk/app-debug.apk'
+    run('flutter', 'build', 'apk', '--debug', '--split-per-abi', '--target-platform', 'android-arm64', *flags)
+    source = root / 'build/app/outputs/flutter-apk/app-arm64-v8a-debug.apk'
 else:
     run('flutter', 'build', args.platform, '--release', *flags)
     candidates = {

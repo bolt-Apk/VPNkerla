@@ -517,6 +517,24 @@ index 4079987..7052ddb 100644
      testImplementation(libs.junit)
      testImplementation(libs.kotlinx.coroutines.test)
  }
+diff --git a/android/app/src/debug/AndroidManifest.xml b/android/app/src/debug/AndroidManifest.xml
+index 1fb7cc8..703696c 100644
+--- a/android/app/src/debug/AndroidManifest.xml
++++ b/android/app/src/debug/AndroidManifest.xml
+@@ -2,11 +2,11 @@
+     xmlns:tools="http://schemas.android.com/tools">
+     <application
+         android:icon="@mipmap/ic_launcher"
+-        android:label="FlClash Debug"
++        android:label="@string/app_name"
+         tools:replace="android:label">
+         <service
+             android:name=".TileService"
+-            android:label="FlClash Debug"
++            android:label="@string/app_name"
+             tools:replace="android:label" />
+     </application>
+ </manifest>
 diff --git a/android/app/src/main/ic_launcher-playstore.png b/android/app/src/main/ic_launcher-playstore.png
 index 76687bbe7d6512fb094f617cd358a2fcdab3d5cb..d019ab1c0183b0db10fe271e2b90b46fad182247 100644
 GIT binary patch
