@@ -65,7 +65,13 @@ jobs:
       - name: Android SDK and NDK
         if: (inputs.platform || 'android') == 'android'
         shell: bash
-        run: sdkmanager "platforms;android-36" "build-tools;36.0.0" "ndk;28.2.13676358"
+        run: |
+          sdkmanager "platforms;android-36" "build-tools;36.0.0" "ndk;28.2.13676358"
+          vpnkerla_ndk="$ANDROID_HOME/ndk/28.2.13676358"
+          test -f "$vpnkerla_ndk/toolchains/llvm/prebuilt/linux-x86_64/lib/libclang.so"
+          echo "ANDROID_NDK_HOME=$vpnkerla_ndk" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_PATH=$vpnkerla_ndk" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_ROOT=$vpnkerla_ndk" >> "$GITHUB_ENV"
       - name: Linux development libraries
         if: (inputs.platform || 'android') == 'linux'
         run: sudo apt-get update && sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libayatana-appindicator3-dev libsecret-1-dev
