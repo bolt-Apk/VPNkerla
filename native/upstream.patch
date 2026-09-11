@@ -979,6 +979,45 @@ zL);J8bd3;!GJP%Cwrb_LvY5zCQJageRmRn=0aP7V2rBBv7gt!F7J0H+4R^u!uF5Jq
 zEiSGHh4GU6S`ZO%aEU9}s>NDqaLBavsAb(ar<VCf+i*N%e_=Ue|3x|n^H>sG>jZHD
 jG5PQR|M~yqIxvu<s~v(%oHiq1hap2<Bb`ERo9F)rs2D`g
 
+diff --git a/android/app/src/main/kotlin/com/follow/clash/plugins/AppPlugin.kt b/android/app/src/main/kotlin/com/follow/clash/plugins/AppPlugin.kt
+index 2964c5b..712c91c 100644
+--- a/android/app/src/main/kotlin/com/follow/clash/plugins/AppPlugin.kt
++++ b/android/app/src/main/kotlin/com/follow/clash/plugins/AppPlugin.kt
+@@ -367,7 +367,7 @@ class AppPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware
+     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+         scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+         channel =
+-            MethodChannel(flutterPluginBinding.binaryMessenger, "${Components.PACKAGE_NAME}/app")
++            MethodChannel(flutterPluginBinding.binaryMessenger, "${Components.CHANNEL_NAMESPACE}/app")
+         channel.setMethodCallHandler(this)
+         watchPackageChanges(flutterPluginBinding.applicationContext)
+     }
+diff --git a/android/app/src/main/kotlin/com/follow/clash/plugins/ServicePlugin.kt b/android/app/src/main/kotlin/com/follow/clash/plugins/ServicePlugin.kt
+index 7683574..4eacd0e 100644
+--- a/android/app/src/main/kotlin/com/follow/clash/plugins/ServicePlugin.kt
++++ b/android/app/src/main/kotlin/com/follow/clash/plugins/ServicePlugin.kt
+@@ -21,7 +21,7 @@ class ServicePlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
+ 
+     override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+         scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+-        channel = MethodChannel(binding.binaryMessenger, "${Components.PACKAGE_NAME}/service")
++        channel = MethodChannel(binding.binaryMessenger, "${Components.CHANNEL_NAMESPACE}/service")
+         channel.setMethodCallHandler(this)
+     }
+ 
+diff --git a/android/app/src/main/kotlin/com/follow/clash/plugins/TilePlugin.kt b/android/app/src/main/kotlin/com/follow/clash/plugins/TilePlugin.kt
+index 744bf98..7ec840c 100644
+--- a/android/app/src/main/kotlin/com/follow/clash/plugins/TilePlugin.kt
++++ b/android/app/src/main/kotlin/com/follow/clash/plugins/TilePlugin.kt
+@@ -11,7 +11,7 @@ class TilePlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
+ 
+     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+         channel =
+-            MethodChannel(flutterPluginBinding.binaryMessenger, "${Components.PACKAGE_NAME}/tile")
++            MethodChannel(flutterPluginBinding.binaryMessenger, "${Components.CHANNEL_NAMESPACE}/tile")
+         channel.setMethodCallHandler(this)
+     }
+ 
 diff --git a/android/app/src/main/res/drawable/ic_launcher_foreground.xml b/android/app/src/main/res/drawable/ic_launcher_foreground.xml
 index cc39282..872c32b 100644
 --- a/android/app/src/main/res/drawable/ic_launcher_foreground.xml
@@ -2352,6 +2391,19 @@ index 352920b..32d4f5b 100644
 -    implementation(libs.firebase.analytics)
      testImplementation(libs.junit)
  }
+diff --git a/android/common/src/main/java/com/follow/clash/common/Components.kt b/android/common/src/main/java/com/follow/clash/common/Components.kt
+index cacc45e..9c20fb4 100644
+--- a/android/common/src/main/java/com/follow/clash/common/Components.kt
++++ b/android/common/src/main/java/com/follow/clash/common/Components.kt
+@@ -4,6 +4,8 @@ import android.content.ComponentName
+ 
+ object Components {
+     const val PACKAGE_NAME = "com.follow.clash"
++    // Match Dart's packageName; Kotlin component classes keep their own namespace.
++    const val CHANNEL_NAMESPACE = "ru.kerlavpn.client"
+ 
+     val mainActivity =
+         ComponentName(GlobalState.packageName, "${PACKAGE_NAME}.MainActivity")
 diff --git a/android/common/src/main/java/com/follow/clash/common/GlobalState.kt b/android/common/src/main/java/com/follow/clash/common/GlobalState.kt
 index 8e1f00f..9c87c89 100644
 --- a/android/common/src/main/java/com/follow/clash/common/GlobalState.kt
@@ -9930,6 +9982,19 @@ index 9780ef0..59c80e5 100644
  bool _isLibclang(FileSystemEntity entity) {
    return entity.path.split(Platform.pathSeparator).last.startsWith('libclang.');
  }
+diff --git a/pubspec.yaml b/pubspec.yaml
+index c4ab378..48c5e5a 100644
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+@@ -1,7 +1,7 @@
+ name: fl_clash
+ description: A multi-platform proxy client based on ClashMeta, simple and easy to use, open-source and ad-free.
+ publish_to: 'none'
+-version: 0.8.97+2026091001
++version: 0.8.97+2026091102
+ environment:
+   sdk: '>=3.10.0 <4.0.0'
+ 
 diff --git a/windows/CMakeLists.txt b/windows/CMakeLists.txt
 index 7a63291..05a35c2 100644
 --- a/windows/CMakeLists.txt
