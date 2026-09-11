@@ -92,5 +92,5 @@ a new repository and its manual workflow run when that access is available.
 The root `.github/workflows/native-pilot.yml` reconstructs the pinned client from
 `native/materialize.py` before building. Use this workflow when the GitHub repo
 contains the product tree with `native/`, rather than the reconstructed Flutter
-client itself. It is manual-only and keeps payments disabled when the API input
+client itself. It runs an Android build for pull requests and supports manual platform builds. It keeps payments disabled when the API input
 is empty. No GitHub execution has been performed yet. See `GITHUB-BUILD-RU.md`.

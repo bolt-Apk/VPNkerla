@@ -2414,9 +2414,20 @@ index 145cd6f..f4c09ac 100644
  
  include(":app")
 diff --git a/arb/intl_en.arb b/arb/intl_en.arb
-index cec5e55..64dd9b3 100644
+index cec5e55..07e48a5 100644
 --- a/arb/intl_en.arb
 +++ b/arb/intl_en.arb
+@@ -253,8 +253,8 @@
+   "actionMode": "Switch mode",
+   "actionProxy": "System proxy",
+   "actionTun": "TUN",
+-  "disclaimer": "Disclaimer",
+-  "disclaimerDesc": "This software is intended only for non-commercial uses such as learning and research. Using it for any commercial purpose is strictly prohibited; any commercial activity is unrelated to this software.",
++  "disclaimer": "About this test version",
++  "disclaimerDesc": "VPNkerla is a test version of an app based on FlClash and mihomo (GPL-3.0). A valid personal profile is required to connect. Registration and payment features are not available in this build.",
+   "agree": "Agree",
+   "hotkeyManagement": "Hotkey management",
+   "hotkeyManagementDesc": "Control the app with the keyboard",
 @@ -617,5 +617,43 @@
    "authorize": "Authorize",
    "installedAppsPermissionRequired": "App list permission required",
@@ -2463,9 +2474,20 @@ index cec5e55..64dd9b3 100644
 +  "kerlaInvalidProfile": "Use a VLESS REALITY, VLESS XHTTP with TLS, or certificate-verified Hysteria 2 profile."
  }
 diff --git a/arb/intl_ja.arb b/arb/intl_ja.arb
-index dfbdf55..74ef207 100644
+index dfbdf55..2c0fcd4 100644
 --- a/arb/intl_ja.arb
 +++ b/arb/intl_ja.arb
+@@ -253,8 +253,8 @@
+   "actionMode": "モード切替",
+   "actionProxy": "システムプロキシ",
+   "actionTun": "TUN",
+-  "disclaimer": "免責事項",
+-  "disclaimerDesc": "本ソフトウェアは、学習・交流や研究などの非商用目的でのみ使用できます。商用目的での使用は固く禁じられています。いかなる商業行為も本ソフトウェアとは一切関係ありません。",
++  "disclaimer": "テスト版について",
++  "disclaimerDesc": "VPNkerla は FlClash と mihomo（GPL-3.0）をベースにしたアプリのテスト版です。接続には有効な個人用プロファイルが必要です。このビルドでは、ユーザー登録と支払い機能は利用できません。",
+   "agree": "同意する",
+   "hotkeyManagement": "ホットキー管理",
+   "hotkeyManagementDesc": "キーボードでアプリを操作します",
 @@ -617,5 +617,43 @@
    "authorize": "許可",
    "installedAppsPermissionRequired": "アプリ一覧の権限が必要です",
@@ -2512,9 +2534,20 @@ index dfbdf55..74ef207 100644
 +  "kerlaInvalidProfile": "VLESS REALITY、TLS付きVLESS XHTTP、または証明書を検証するHysteria 2プロファイルが必要です。"
  }
 diff --git a/arb/intl_ru.arb b/arb/intl_ru.arb
-index 9eab3a0..cbbbb6a 100644
+index 9eab3a0..e363b0c 100644
 --- a/arb/intl_ru.arb
 +++ b/arb/intl_ru.arb
+@@ -253,8 +253,8 @@
+   "actionMode": "Переключить режим",
+   "actionProxy": "Системный прокси",
+   "actionTun": "TUN",
+-  "disclaimer": "Отказ от ответственности",
+-  "disclaimerDesc": "Это программное обеспечение предназначено только для некоммерческого использования: обучения, обмена опытом и научных исследований. Коммерческое использование строго запрещено; любая коммерческая деятельность не имеет отношения к этому программному обеспечению.",
++  "disclaimer": "О тестовой версии",
++  "disclaimerDesc": "VPNkerla — тестовая версия приложения на основе FlClash и mihomo (GPL-3.0). Для подключения нужен действующий персональный профиль. Регистрация и оплата в этой сборке не подключены.",
+   "agree": "Согласен",
+   "hotkeyManagement": "Горячие клавиши",
+   "hotkeyManagementDesc": "Управление приложением с клавиатуры",
 @@ -617,5 +617,43 @@
    "authorize": "Разрешить",
    "installedAppsPermissionRequired": "Требуется разрешение на список приложений",
@@ -2561,9 +2594,20 @@ index 9eab3a0..cbbbb6a 100644
 +  "kerlaInvalidProfile": "Профиль не подходит. Нужен VLESS REALITY, VLESS XHTTP с TLS или Hysteria 2 с проверкой сертификата."
  }
 diff --git a/arb/intl_zh_CN.arb b/arb/intl_zh_CN.arb
-index c3dd17c..747913c 100644
+index c3dd17c..e603380 100644
 --- a/arb/intl_zh_CN.arb
 +++ b/arb/intl_zh_CN.arb
+@@ -253,8 +253,8 @@
+   "actionMode": "切换模式",
+   "actionProxy": "系统代理",
+   "actionTun": "虚拟网卡",
+-  "disclaimer": "免责声明",
+-  "disclaimerDesc": "本软件仅供学习交流、科研等非商业性质的用途，严禁将本软件用于商业目的。如有任何商业行为，均与本软件无关。",
++  "disclaimer": "关于测试版",
++  "disclaimerDesc": "VPNkerla 是基于 FlClash 和 mihomo（GPL-3.0）的应用测试版。连接需要有效的个人配置文件。此版本尚未接入注册和支付功能。",
+   "agree": "同意",
+   "hotkeyManagement": "快捷键管理",
+   "hotkeyManagementDesc": "使用键盘控制应用程序",
 @@ -617,5 +617,43 @@
    "authorize": "授权",
    "installedAppsPermissionRequired": "需要读取应用列表权限",
@@ -3227,6 +3271,42 @@ index ada9dcb..e6ad80d 100644
      );
    }
  
+diff --git a/lib/bootstrap.dart b/lib/bootstrap.dart
+index 82895dc..37cf66a 100644
+--- a/lib/bootstrap.dart
++++ b/lib/bootstrap.dart
+@@ -162,7 +162,6 @@ class Bootstrap {
+     await _handleFailedPreference();
+     await _handlerDisclaimer();
+     await _showCrashRecoveryTip();
+-    await _showCrashlyticsTip();
+     await _container.read(coreActionProvider.notifier).startCore();
+     if (!_bootDecision.isDegraded) {
+       await _container.read(setupActionProvider.notifier).initStatus();
+@@ -218,23 +217,6 @@ class Bootstrap {
+     await _container.read(systemActionProvider.notifier).handleExit(false);
+   }
+ 
+-  Future<void> _showCrashlyticsTip() async {
+-    if (!system.isAndroid) return;
+-    if (_container.read(
+-      appSettingProvider.select((state) => state.crashlyticsTip),
+-    )) {
+-      return;
+-    }
+-    await dialogs.showMessage(
+-      title: currentAppLocalizations.dataCollectionTip,
+-      cancelable: false,
+-      message: TextSpan(text: currentAppLocalizations.dataCollectionContent),
+-    );
+-    _container
+-        .read(appSettingProvider.notifier)
+-        .update((state) => state.copyWith(crashlyticsTip: true));
+-  }
+-
+   Future<void> _handlerDisclaimer() async {
+     if (_container.read(
+       appSettingProvider.select((state) => state.disclaimerAccepted),
 diff --git a/lib/common/constant.dart b/lib/common/constant.dart
 index 61b91ea..5830478 100644
 --- a/lib/common/constant.dart
@@ -3248,10 +3328,24 @@ index 61b91ea..5830478 100644
  final windowsPipeName = '\\\\.\\pipe\\FlClashCore_${_randomPipeId()}';
  const helperPort = 47890;
 diff --git a/lib/l10n/intl/messages_en.dart b/lib/l10n/intl/messages_en.dart
-index bbff2f9..7720960 100644
+index bbff2f9..9279be3 100644
 --- a/lib/l10n/intl/messages_en.dart
 +++ b/lib/l10n/intl/messages_en.dart
-@@ -551,9 +551,10 @@ class MessageLookup extends MessageLookupByLibrary {
+@@ -389,9 +389,11 @@ class MessageLookup extends MessageLookupByLibrary {
+     ),
+     "direct": MessageLookupByLibrary.simpleMessage("Direct"),
+     "disableUDP": MessageLookupByLibrary.simpleMessage("Disable UDP"),
+-    "disclaimer": MessageLookupByLibrary.simpleMessage("Disclaimer"),
++    "disclaimer": MessageLookupByLibrary.simpleMessage(
++      "About this test version",
++    ),
+     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
+-      "This software is intended only for non-commercial uses such as learning and research. Using it for any commercial purpose is strictly prohibited; any commercial activity is unrelated to this software.",
++      "VPNkerla is a test version of an app based on FlClash and mihomo (GPL-3.0). A valid personal profile is required to connect. Registration and payment features are not available in this build.",
+     ),
+     "disconnected": MessageLookupByLibrary.simpleMessage("Disconnected"),
+     "discoverNewVersion": MessageLookupByLibrary.simpleMessage(
+@@ -551,9 +553,10 @@ class MessageLookup extends MessageLookupByLibrary {
      "inputRuleContent": MessageLookupByLibrary.simpleMessage(
        "Enter the rule content",
      ),
@@ -3265,7 +3359,7 @@ index bbff2f9..7720960 100644
      "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
        "This system hides the installed app list until the permission is granted. Authorize it to configure the per-app proxy.",
      ),
-@@ -597,6 +598,82 @@ class MessageLookup extends MessageLookupByLibrary {
+@@ -597,6 +600,82 @@ class MessageLookup extends MessageLookupByLibrary {
      "keepAliveIntervalDesc": MessageLookupByLibrary.simpleMessage(
        "TCP keep-alive interval",
      ),
@@ -3349,9 +3443,21 @@ index bbff2f9..7720960 100644
      "language": MessageLookupByLibrary.simpleMessage("Language"),
      "launchInterrupted": MessageLookupByLibrary.simpleMessage(
 diff --git a/lib/l10n/intl/messages_ja.dart b/lib/l10n/intl/messages_ja.dart
-index 189a8ab..fbc6c14 100644
+index 189a8ab..04b8753 100644
 --- a/lib/l10n/intl/messages_ja.dart
 +++ b/lib/l10n/intl/messages_ja.dart
+@@ -315,9 +315,9 @@ class MessageLookup extends MessageLookupByLibrary {
+     ),
+     "direct": MessageLookupByLibrary.simpleMessage("ダイレクト"),
+     "disableUDP": MessageLookupByLibrary.simpleMessage("UDPを無効化"),
+-    "disclaimer": MessageLookupByLibrary.simpleMessage("免責事項"),
++    "disclaimer": MessageLookupByLibrary.simpleMessage("テスト版について"),
+     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
+-      "本ソフトウェアは、学習・交流や研究などの非商用目的でのみ使用できます。商用目的での使用は固く禁じられています。いかなる商業行為も本ソフトウェアとは一切関係ありません。",
++      "VPNkerla は FlClash と mihomo（GPL-3.0）をベースにしたアプリのテスト版です。接続には有効な個人用プロファイルが必要です。このビルドでは、ユーザー登録と支払い機能は利用できません。",
+     ),
+     "disconnected": MessageLookupByLibrary.simpleMessage("切断済み"),
+     "discoverNewVersion": MessageLookupByLibrary.simpleMessage(
 @@ -490,6 +490,80 @@ class MessageLookup extends MessageLookupByLibrary {
      "keepAliveIntervalDesc": MessageLookupByLibrary.simpleMessage(
        "TCPキープアライブ間隔",
@@ -3434,10 +3540,24 @@ index 189a8ab..fbc6c14 100644
      "language": MessageLookupByLibrary.simpleMessage("言語"),
      "launchInterrupted": MessageLookupByLibrary.simpleMessage("起動が完了しませんでした"),
 diff --git a/lib/l10n/intl/messages_ru.dart b/lib/l10n/intl/messages_ru.dart
-index dd11eaf..57d429b 100644
+index dd11eaf..e8efffd 100644
 --- a/lib/l10n/intl/messages_ru.dart
 +++ b/lib/l10n/intl/messages_ru.dart
-@@ -565,9 +565,10 @@ class MessageLookup extends MessageLookupByLibrary {
+@@ -397,11 +397,9 @@ class MessageLookup extends MessageLookupByLibrary {
+     ),
+     "direct": MessageLookupByLibrary.simpleMessage("Прямой"),
+     "disableUDP": MessageLookupByLibrary.simpleMessage("Отключить UDP"),
+-    "disclaimer": MessageLookupByLibrary.simpleMessage(
+-      "Отказ от ответственности",
+-    ),
++    "disclaimer": MessageLookupByLibrary.simpleMessage("О тестовой версии"),
+     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
+-      "Это программное обеспечение предназначено только для некоммерческого использования: обучения, обмена опытом и научных исследований. Коммерческое использование строго запрещено; любая коммерческая деятельность не имеет отношения к этому программному обеспечению.",
++      "VPNkerla — тестовая версия приложения на основе FlClash и mihomo (GPL-3.0). Для подключения нужен действующий персональный профиль. Регистрация и оплата в этой сборке не подключены.",
+     ),
+     "disconnected": MessageLookupByLibrary.simpleMessage("Отключено"),
+     "discoverNewVersion": MessageLookupByLibrary.simpleMessage(
+@@ -565,9 +563,10 @@ class MessageLookup extends MessageLookupByLibrary {
      "inputRuleContent": MessageLookupByLibrary.simpleMessage(
        "Введите содержимое правила",
      ),
@@ -3451,7 +3571,7 @@ index dd11eaf..57d429b 100644
      "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
        "Эта система не выдаёт список установленных приложений без разрешения. Предоставьте его, чтобы настроить прокси для отдельных приложений.",
      ),
-@@ -609,6 +610,90 @@ class MessageLookup extends MessageLookupByLibrary {
+@@ -609,6 +608,90 @@ class MessageLookup extends MessageLookupByLibrary {
      "keepAliveIntervalDesc": MessageLookupByLibrary.simpleMessage(
        "Интервал TCP keep-alive",
      ),
@@ -3543,9 +3663,21 @@ index dd11eaf..57d429b 100644
      "language": MessageLookupByLibrary.simpleMessage("Язык"),
      "launchInterrupted": MessageLookupByLibrary.simpleMessage(
 diff --git a/lib/l10n/intl/messages_zh_CN.dart b/lib/l10n/intl/messages_zh_CN.dart
-index 2e41cbd..a981c5d 100644
+index 2e41cbd..ba3d7c8 100644
 --- a/lib/l10n/intl/messages_zh_CN.dart
 +++ b/lib/l10n/intl/messages_zh_CN.dart
+@@ -279,9 +279,9 @@ class MessageLookup extends MessageLookupByLibrary {
+     "developerModeEnableTip": MessageLookupByLibrary.simpleMessage("开发者模式已启用。"),
+     "direct": MessageLookupByLibrary.simpleMessage("直连"),
+     "disableUDP": MessageLookupByLibrary.simpleMessage("禁用UDP"),
+-    "disclaimer": MessageLookupByLibrary.simpleMessage("免责声明"),
++    "disclaimer": MessageLookupByLibrary.simpleMessage("关于测试版"),
+     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
+-      "本软件仅供学习交流、科研等非商业性质的用途，严禁将本软件用于商业目的。如有任何商业行为，均与本软件无关。",
++      "VPNkerla 是基于 FlClash 和 mihomo（GPL-3.0）的应用测试版。连接需要有效的个人配置文件。此版本尚未接入注册和支付功能。",
+     ),
+     "disconnected": MessageLookupByLibrary.simpleMessage("已断开"),
+     "discoverNewVersion": MessageLookupByLibrary.simpleMessage("发现新版本"),
 @@ -424,6 +424,80 @@ class MessageLookup extends MessageLookupByLibrary {
      "ja": MessageLookupByLibrary.simpleMessage("日语"),
      "justNow": MessageLookupByLibrary.simpleMessage("刚刚"),
@@ -3628,10 +3760,35 @@ index 2e41cbd..a981c5d 100644
      "language": MessageLookupByLibrary.simpleMessage("语言"),
      "launchInterrupted": MessageLookupByLibrary.simpleMessage("启动未完成"),
 diff --git a/lib/l10n/l10n.dart b/lib/l10n/l10n.dart
-index a25fcbd..5880caa 100644
+index a25fcbd..7e245bb 100644
 --- a/lib/l10n/l10n.dart
 +++ b/lib/l10n/l10n.dart
-@@ -5114,6 +5114,331 @@ class AppLocalizations {
+@@ -1960,15 +1960,20 @@ class AppLocalizations {
+     return Intl.message('TUN', name: 'actionTun', desc: '', args: []);
+   }
+ 
+-  /// `Disclaimer`
++  /// `About this test version`
+   String get disclaimer {
+-    return Intl.message('Disclaimer', name: 'disclaimer', desc: '', args: []);
++    return Intl.message(
++      'About this test version',
++      name: 'disclaimer',
++      desc: '',
++      args: [],
++    );
+   }
+ 
+-  /// `This software is intended only for non-commercial uses such as learning and research. Using it for any commercial purpose is strictly prohibited; any commercial activity is unrelated to this software.`
++  /// `VPNkerla is a test version of an app based on FlClash and mihomo (GPL-3.0). A valid personal profile is required to connect. Registration and payment features are not available in this build.`
+   String get disclaimerDesc {
+     return Intl.message(
+-      'This software is intended only for non-commercial uses such as learning and research. Using it for any commercial purpose is strictly prohibited; any commercial activity is unrelated to this software.',
++      'VPNkerla is a test version of an app based on FlClash and mihomo (GPL-3.0). A valid personal profile is required to connect. Registration and payment features are not available in this build.',
+       name: 'disclaimerDesc',
+       desc: '',
+       args: [],
+@@ -5114,6 +5119,331 @@ class AppLocalizations {
        args: [],
      );
    }
